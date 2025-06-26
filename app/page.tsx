@@ -54,7 +54,7 @@ export default function Home() {
             <input
               type="email"
               placeholder="Email Address"
-              className="flex-1 bg-transparent px-4  placeholder-gray-500 focus:outline-none"
+              className="flex-1 bg-transparent px-4  placeholder-gray-500 text-white focus:outline-none"
             />
             <button className="whitespace-nowrap cursor-pointer rounded-md bg-[#4749E7] px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition">
               Join Waitlist →
