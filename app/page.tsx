@@ -11,7 +11,7 @@ export default function Home() {
   const [nav, setNav] = useState("home");
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <header className="flex items-center justify-between w-full max-w-4xl">
         <nav className="flex w-full justify-center gap-x-28 uppercase text-md text-white">
           {navItems.map((item) => (
