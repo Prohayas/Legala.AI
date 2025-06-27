@@ -1,13 +1,27 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState, useState } from "react";
+import Form from "next/form";
+import { createWaitlist } from "./actions/submitWaitlist";
 
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Roadmap", href: "#roadmap" },
 ];
+
+interface FormState {
+  message: string;
+  status: "idle" | "success" | "error";
+}
+
+const initialState: FormState = {
+  message: "",
+  status: "idle",
+};
+
 export default function Home() {
+  const [state, formAction] = useActionState(createWaitlist, initialState);
   const [nav, setNav] = useState("home");
 
   return (
@@ -40,7 +54,7 @@ export default function Home() {
           <div className="text-white mt-16 text-center">
             <h1 className="uppercase font-koulen tracking-widest font-bold text-8xl">
               <span className="bg-gradient-to-r from-[#4749E7] to-[#CACBE5] bg-clip-text text-transparent">
-                lexora ai
+                legala ai
               </span>{" "}
               <br /> empowering your <br /> legal journey
             </h1>
@@ -50,15 +64,35 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex mt-10 max-w-[30rem] md:max-w-[39rem] mx-auto items-center rounded-md bg-[#1A1A1A] p-1 ring-1 ring-[#2e2e2e]">
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="flex-1 bg-transparent px-4  placeholder-gray-500 text-white focus:outline-none"
-            />
-            <button className="whitespace-nowrap cursor-pointer rounded-md bg-[#4749E7] px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition">
-              Join Waitlist →
-            </button>
+          <div className="flex flex-col gap-y-2 mt-10 max-w-[30rem] md:max-w-[39rem] mx-auto">
+            <Form
+              action={formAction}
+              className="flex items-center rounded-md bg-[#1A1A1A] p-1 ring-1 ring-[#2e2e2e]"
+            >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email Address"
+                className="flex-1 bg-transparent px-4  placeholder-gray-500 text-white focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="whitespace-nowrap cursor-pointer rounded-md bg-[#4749E7] px-4 py-2 text-sm font-medium text-white hover:opacity-90 transition"
+              >
+                Join Waitlist →
+              </button>
+            </Form>
+            {state.status === "success" && (
+              <p className="text-green-600 font-bold">
+                Your email has been waitlisted!
+              </p>
+            )}
+            {state.status === "error" && (
+              <p className="text-red-600 font-bold">
+                Oh oh! Something went wrong.
+              </p>
+            )}
           </div>
         </section>
 

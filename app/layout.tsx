@@ -3,7 +3,7 @@ import "./globals.css";
 import inter from "./lib/fonts";
 
 export const metadata: Metadata = {
-  title: "Lexora AI",
+  title: "Legala AI",
   description: "Your AI-Powered Legal Journey",
 };
 
