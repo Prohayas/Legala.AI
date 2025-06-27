@@ -59,7 +59,7 @@ export default function Home() {
               <br /> empowering your <br /> legal journey
             </h1>
             <p className="mt-8 font-light text-2xl">
-              Lexora AI Delivers Personalized Learning, AI-Powered <br />{" "}
+              Legala AI Delivers Personalized Learning, AI-Powered <br />{" "}
               Inisghts, and Fun Gamified Challenges. Join the Waitlist!
             </p>
           </div>
