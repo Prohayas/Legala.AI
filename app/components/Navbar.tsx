@@ -18,7 +18,7 @@ const Navbar = () => {
           <Link
             key={item.href}
             href={item.href}
-            onClick={() => setNav(item.href.toLowerCase())}
+            onClick={() => setNav(item.label.toLowerCase())}
             className={`hover:underline ${
               nav === item.label.toLowerCase()
                 ? "text-blue-custom font-semibold"
