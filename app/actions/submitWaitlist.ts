@@ -1,16 +1,12 @@
 "use server";
 
 import prisma from "../lib/prisma";
-
-interface FormState {
-  message: string;
-  status: "idle" | "success" | "error";
-}
+import { PrismaFormStateTypes } from "../lib/types";
 
 export async function createWaitlist(
-  prevState: FormState,
+  prevState: PrismaFormStateTypes,
   formData: FormData
-): Promise<FormState> {
+): Promise<PrismaFormStateTypes> {
   const email = formData.get("email")?.toString();
 
   if (!email) {

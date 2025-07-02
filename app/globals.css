@@ -1,31 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Koulen&display=swap");
 @import "tailwindcss";
 
-body {
-  background: radial-gradient(circle at center, #1e1e1e 0%, #0b0b0b 80%),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.02) 0px,
-      rgba(255, 255, 255, 0.02) 1px,
-      transparent 1px,
-      transparent 50px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.02) 0px,
-      rgba(255, 255, 255, 0.02) 1px,
-      transparent 1px,
-      transparent 50px
-    );
-  background-blend-mode: overlay;
-  position: relative;
-}
-
 @layer base {
   .text-blue-custom {
     color: #1e40af;
-  }
-  .bg-dark-custom {
   }
 
   .bg-line-gradient {
